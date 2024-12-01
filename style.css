@@ -1,0 +1,318 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#main-nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#nav-list {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-item {
+    border: 1px solid lightgrey;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease;
+    font-weight: bold;
+
+} 
+
+.nav-item:hover {
+    transform: translateY(-2px);
+    border-color: #ff8f26;
+    background: linear-gradient(90deg, rgba(255,242,229,1) 0%, rgba(255,255,255,1) 100%);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+} 
+
+.default-line {
+    height: 1px;
+    background-color: lightgrey;
+    width: 80%;
+    border: none
+}
+
+.main-section {
+    border: 1px solid lightgrey;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: auto;
+}
+
+
+#nutrition-overview-inner-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.single-macro-summary-container {
+    border: 2px solid lightgrey;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    height: 200px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease;
+}
+
+.single-macro-summary-container:hover {
+    transform: translateY(-2px);
+    border-color: #ff8f26;
+    background: linear-gradient(90deg, rgba(255,242,229,1) 0%, rgba(255,255,255,1) 100%);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.single-macro-title {
+    font-size: 20px;
+    padding: 0px;
+    margin: 15px;
+}
+
+.single-macro-stat {
+    font-size: 48px;
+    padding: 0px;
+    margin: 15px;
+}
+
+.btn-main {
+    border: 1px solid lightgrey;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease;
+    font-weight: bold;
+}
+
+#add-options {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn-main:hover {
+    transform: translateY(-2px);
+    border-color: #ff8f26;
+    background: linear-gradient(90deg, rgba(255,242,229,1) 0%, rgba(255,255,255,1) 100%);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#popup-menu {
+    display: none;
+    height: 1000px;
+    width: 1400px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    border: 1px solid lightgrey;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+    flex-direction: column;
+}
+
+#overlay {
+    transition: opacity 0.3s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.5);
+    z-index: 10;
+    display: none;
+  }
+
+  #add-food-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.search-input {
+    display: block;
+    width: 80%;
+    margin: 0 auto 20px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s ease;
+}
+
+.search-input:focus {
+    border: 1px solid #007bff;
+    outline: none;
+}
+
+
+.food-table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.table-header {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.table-header-item {
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid #ddd;
+}
+
+#food-table-body tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#food-table-body tr:hover {
+    background-color: #e9f5ff;
+}
+
+#food-table-body td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+
+@media (max-width: 768px) {
+    .search-input {
+        width: 100%;
+    }
+
+    .food-table {
+        font-size: 0.9rem;
+    }
+}
+
+.add-food-user-input {
+    margin: 20px auto;
+    padding: 20px;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+.label-and-input {
+    margin-bottom: 20px;
+}
+
+
+.label-and-input label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+
+.label-and-input input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s ease;
+}
+
+.label-and-input input:focus {
+    border: 1px solid #007bff;
+    outline: none;
+}
+
+
+#submit-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#submit-btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+#submit-btn:active {
+    background-color: #003f7f;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.table-wrapper {
+    height: 500px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.add-food-table {
+    width: 100%;
+}
+
+
+.add-food-table tr {
+    height: 50px;
+}
+
+.selected-row {
+    background-color: #007bff;
+    color: white;
+}
